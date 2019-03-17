@@ -34,7 +34,7 @@ void Admin::Dibuja()
 
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("Fuentes/Cafe.ttf", 18);
-		ETSIDI::printxy("Javier Álvarez & Alberto Carrobles", -10, 16.4);
+		ETSIDI::printxy("Pablo Mongo & Richard Enric", -10, 16.4);
 
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::printxy("Pulsa E para empezar", 15, -15);
@@ -50,7 +50,7 @@ void Admin::Dibuja()
 	else if (estado == JUEGO)
 	{
 
-		
+	
 		
 
 		
