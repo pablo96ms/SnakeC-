@@ -17,8 +17,8 @@
 #define COLUMNS 40
 #define ROWS 40
 #define FPS 10 //marca la velocidad de la animacion
-Admin JuegoSnake;
-Mundo mundo;
+Admin juegoSnake;
+
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
@@ -28,6 +28,7 @@ void OnTimer(int value); //esta funcion sera llamada cuando transcurra una tempo
 void OnKeyboardDown(int key, int x, int y); //cursores
 void init();
 void reshape_callback(int, int);
+void OnSpecialKeyboardDown(int key, int x, int y);
 
 int main(int argc, char* argv[])
 {
@@ -69,12 +70,12 @@ void Display_callbacks(void) //display callback
     
     
     //aqui es donde hay que poner el cÛdigo de dibujo
-	//JuegoSnake.Dibuja();
-	mundo.dibuja();
+	
+	juegoSnake.dibuja();
 	
     //no borrar esta linea ni poner nada despues
     glutSwapBuffers(); //Activa Buffers
-    if(mundo.gameover) //si gameover es true
+    if(juegoSnake.gameover) //si gameover es true
     {
        char _score[10];
        _itoa(mundo.score,_score,10); //score coge la puntuacion y se la lleva a _score 10 es decimal
@@ -86,18 +87,25 @@ void Display_callbacks(void) //display callback
 }
 void OnKeyboardDown(int key, int x_t, int y_t)
 {
-    mundo.tecla(key);
+	juegoSnake.tecla(key);
+}
+void OnSpecialKeyboardDown(int key, int x, int y)
+{
+	juegoSnake.TeclaEspecial(key);
+
+	glutPostRedisplay();
+
 }
 
 void OnTimer(int value)
 {
-	mundo.Mover();
+	juegoSnake.Mover();
     glutPostRedisplay();
     glutTimerFunc(1000/FPS, OnTimer, 0); //necesita que sea asi, porque la serpiente se movera muy rapido
 }
 void init()
 {
-    mundo.DibujaCuadricula();
+	juegoSnake.DibujaCuadricula();
 }
 void reshape_callback(int w, int h)
 {

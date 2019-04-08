@@ -26,11 +26,11 @@ void Admin::Dibuja()
 
 	
 
-		
+		Textura::DibujaTextura(-80, 50, 80, -50, -0.01, 3);
 
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("Fuentes/Yukon.ttf", 60);
-		ETSIDI::printxy("ETSIDI-ESCAPE", -40, 4);
+		ETSIDI::printxy("SNAKE C++", -40, 4);
 
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("Fuentes/Cafe.ttf", 18);
@@ -49,7 +49,10 @@ void Admin::Dibuja()
 	}
 	else if (estado == JUEGO)
 	{
-
+		mundo.Dibuja();
+		
+		ETSIDI::setFont("Fuentes/Cafe.ttf", 18);
+	
 	
 		
 
@@ -88,7 +91,7 @@ void Admin::Tecla(unsigned char key)
 	else if (estado == JUEGO)
 	{
 		//pasa el control a juego
-		//juegoETSIDI.Tecla(key);
+		juego.Tecla(key);
 		if (key == 'p')
 			estado = PAUSA;
 	}

@@ -1,5 +1,5 @@
 #pragma once
-#include "Juego.h"
+#include "Mundo.h"
 #ifndef Admin_h
 #define Admin_h
 
@@ -11,7 +11,7 @@ public:
 	Admin();
 	enum Estado { INICIO, JUEGO, GAMEOVER, FIN, PAUSA };
 	Estado estado;
-	Juego juego;
+	Mundo mundo;
 	virtual ~Admin();
 protected:
 	void Dibuja();
