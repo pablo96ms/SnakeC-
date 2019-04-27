@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "Enemigo.h"
 #include "glut.h"
 #include "time.h"

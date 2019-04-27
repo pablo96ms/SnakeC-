@@ -23,11 +23,12 @@ Vector2D::~Vector2D()
 {
 }
 
-void Vector2D::random(float &x,float &y)
+Vector2D& Vector2D::random(Vector2D& v)
 {
 	srand(time(NULL));
-	x = 1 + rand() % (38);
-	y = 1 + rand() % (38);
+	v.x = 1 + rand() % (38);
+	v.y = 1 + rand() % (38);
+	return v;
 }
 Vector2D Vector2D::operator +(Vector2D v) {
 	Vector2D res(*this);

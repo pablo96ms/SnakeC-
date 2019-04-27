@@ -5,28 +5,25 @@
 #include "Vector2D.h"
 #include "Interaccion.h"
 #include "Fruta.h"
+#include "ColorRGB.h"
 
 
 
 
-class Bonus:public ObjetoMovil
+class Bonus :public ObjetoMovil
 {
-	
+
+	friend class Interaccion;
 public:
+
+	void dibuja();
 	Bonus();
 	virtual ~Bonus();
-	void Dibuja(Vector2D&);
-	Vector2D posicion;
-	bool bonus;
-	friend class Interaccion;
 private:
-	unsigned char rojo;
-	unsigned char azul;
-	unsigned char verde;
-	
+	float lado;
 
-	
-	
+
+
+
 };
 #endif // !Bonus_h
-

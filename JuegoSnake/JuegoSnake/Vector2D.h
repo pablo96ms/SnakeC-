@@ -27,7 +27,7 @@ public:
 	float xfruta, yfruta;
 	//int xbonus, ybonus;
     int xgrid,ygrid;
-    void random(float &x,float &y);//funcion que genera un numero aleatorio
+    Vector2D& random(Vector2D&);//funcion que genera un numero aleatorio
 	Vector2D operator -(Vector2D);//resta de vectores
 	Vector2D operator +(Vector2D);// suma de vectores
 	Vector2D operator *(float);//producto por un escalar

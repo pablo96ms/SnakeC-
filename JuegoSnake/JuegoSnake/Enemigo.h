@@ -3,7 +3,7 @@
 #include "Vector2D.h"
 #include "ETSIDI.h"
 #include "ObjetoMovil.h"
-#define MAX_ENEMIGOS 10
+//#define MAX_ENEMIGOS 10
 
 
 

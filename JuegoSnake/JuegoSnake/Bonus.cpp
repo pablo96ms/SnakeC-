@@ -8,7 +8,11 @@
 
 Bonus::Bonus()
 {
-	bonus = true;
+	//movimiento gravitatorio
+	//velocidad vertical inicial
+	aceleracion.y = -9.8f;
+	velocidad.y = 15;
+	lado = 0.5f;
 }
 
 
@@ -16,13 +20,16 @@ Bonus::~Bonus()
 {
 }
 
-void Bonus::Dibuja(Vector2D &o) {
+void Bonus::dibuja() {
 
-	srand(time(NULL));
-	o.x = 1 + rand() % 38;
-	o.y= 1 + rand() % 38;
-	glColor3f(0.0, 1.0, 0.6);
-	glRectf(o.x, o.y, o.x + 1, o.y + 1);
-	
+	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 0);
+	glRotatef(30, 1, 1, 1);
+	glColor3f(rand() / (float)RAND_MAX,
+		rand() / (float)RAND_MAX,
+		rand() / (float)RAND_MAX);//color aleatorio
+	glutSolidCube(lado);
+	glPopMatrix();
+
 }
 
